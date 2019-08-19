@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IntegradorWebService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IntegradorWebService_WSVIPP_PostagemVipp" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://vpsrv.visualset.com.br/PostagemVipp.asmx</Value>
+    </Setting>
+    <Setting Name="Site" Type="(Web Service URL)" Scope="User">
+      <Value Profile="(Default)">http://vipp.visualset.com.br</Value>
+    </Setting>
+    <Setting Name="Layout" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PEFycmF5T2ZGb3JtYXRhY2FvUGxhbmlsaGE+PEZvcm1hdGFjYW9QbGFuaWxoYT48Tm9tZUF0cmlidXRvPkRlc3RpbmF0YXJpbzwvTm9tZUF0cmlidXRvPjxDb2x1bmE+MzwvQ29sdW5hPjwvRm9ybWF0YWNhb1BsYW5pbGhhPjxGb3JtYXRhY2FvUGxhbmlsaGE+PE5vbWVBdHJpYnV0bz5PYnNlcnZhY2FvNDwvTm9tZUF0cmlidXRvPjxDb2x1bmE+NDwvQ29sdW5hPjwvRm9ybWF0YWNhb1BsYW5pbGhhPjxGb3JtYXRhY2FvUGxhbmlsaGE+PE5vbWVBdHJpYnV0bz5Eb2N1bWVudG9EZXN0aW5hdGFyaW88L05vbWVBdHJpYnV0bz48Q29sdW5hPjQ8L0NvbHVuYT48L0Zvcm1hdGFjYW9QbGFuaWxoYT48Rm9ybWF0YWNhb1BsYW5pbGhhPjxOb21lQXRyaWJ1dG8+RW1haWw8L05vbWVBdHJpYnV0bz48Q29sdW5hPjU8L0NvbHVuYT48L0Zvcm1hdGFjYW9QbGFuaWxoYT48Rm9ybWF0YWNhb1BsYW5pbGhhPjxOb21lQXRyaWJ1dG8+Q0VQPC9Ob21lQXRyaWJ1dG8+PENvbHVuYT42PC9Db2x1bmE+PC9Gb3JtYXRhY2FvUGxhbmlsaGE+PEZvcm1hdGFjYW9QbGFuaWxoYT48Tm9tZUF0cmlidXRvPkVuZGVyZWNvPC9Ob21lQXRyaWJ1dG8+PENvbHVuYT43PC9Db2x1bmE+PC9Gb3JtYXRhY2FvUGxhbmlsaGE+PEZvcm1hdGFjYW9QbGFuaWxoYT48Tm9tZUF0cmlidXRvPk51bWVybzwvTm9tZUF0cmlidXRvPjxDb2x1bmE+ODwvQ29sdW5hPjwvRm9ybWF0YWNhb1BsYW5pbGhhPjxGb3JtYXRhY2FvUGxhbmlsaGE+PE5vbWVBdHJpYnV0bz5Db21wbGVtZW50bzwvTm9tZUF0cmlidXRvPjxDb2x1bmE+OTwvQ29sdW5hPjwvRm9ybWF0YWNhb1BsYW5pbGhhPjxGb3JtYXRhY2FvUGxhbmlsaGE+PE5vbWVBdHJpYnV0bz5CYWlycm88L05vbWVBdHJpYnV0bz48Q29sdW5hPjEwPC9Db2x1bmE+PC9Gb3JtYXRhY2FvUGxhbmlsaGE+PEZvcm1hdGFjYW9QbGFuaWxoYT48Tm9tZUF0cmlidXRvPkNpZGFkZTwvTm9tZUF0cmlidXRvPjxDb2x1bmE+MTE8L0NvbHVuYT48L0Zvcm1hdGFjYW9QbGFuaWxoYT48Rm9ybWF0YWNhb1BsYW5pbGhhPjxOb21lQXRyaWJ1dG8+VUY8L05vbWVBdHJpYnV0bz48Q29sdW5hPjEyPC9Db2x1bmE+PC9Gb3JtYXRhY2FvUGxhbmlsaGE+PEZvcm1hdGFjYW9QbGFuaWxoYT48Tm9tZUF0cmlidXRvPk9ic2VydmFjYW8xPC9Ob21lQXRyaWJ1dG8+PENvbHVuYT4xNDwvQ29sdW5hPjwvRm9ybWF0YWNhb1BsYW5pbGhhPjxGb3JtYXRhY2FvUGxhbmlsaGE+PE5vbWVBdHJpYnV0bz5PYnNlcnZhY2FvMjwvTm9tZUF0cmlidXRvPjxDb2x1bmE+MTU8L0NvbHVuYT48L0Zvcm1hdGFjYW9QbGFuaWxoYT48L0FycmF5T2ZGb3JtYXRhY2FvUGxhbmlsaGE+</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

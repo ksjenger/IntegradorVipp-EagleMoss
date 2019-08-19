@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.visualset.inf.br/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.visualset.inf.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.visualset.inf.br/">
+      <s:element name="BloquearObjetoCorreios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BloquearObjetoCorreios" type="tns:BloquearObjetoCorreios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BloquearObjetoCorreios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilVipp" type="tns:PerfilVipp" />
+          <s:element minOccurs="0" maxOccurs="1" name="Etiqueta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaErros" type="tns:ArrayOfErro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PerfilVipp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdPerfil" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfErro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Erro" nillable="true" type="tns:Erro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Erro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TipoErro" type="tns:TipoErro" />
+          <s:element minOccurs="0" maxOccurs="1" name="Atributo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTraceOut" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Origem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoErro">
+        <s:restriction base="s:string">
+          <s:enumeration value="Excecao" />
+          <s:enumeration value="RegraNegocio" />
+          <s:enumeration value="Validacao" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="BloquearObjetoCorreiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BloquearObjetoCorreiosResult" type="tns:BloquearObjetoCorreios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearDownloadConhecimento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BloquearPostagem" type="tns:BloquearDownload" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BloquearDownload">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilVipp" type="tns:PerfilVipp" />
+          <s:element minOccurs="0" maxOccurs="1" name="Etiqueta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StBloqueado" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaErros" type="tns:ArrayOfErro" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BloquearDownloadConhecimentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BloquearDownloadConhecimentoResult" type="tns:BloquearDownload" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LiberarDownloadConhecimento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LiberarPostagem" type="tns:LiberarDownload" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LiberarDownload">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilVipp" type="tns:PerfilVipp" />
+          <s:element minOccurs="0" maxOccurs="1" name="Etiqueta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaErros" type="tns:ArrayOfErro" />
+          <s:element minOccurs="1" maxOccurs="1" name="StLiberado" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LiberarDownloadConhecimentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LiberarDownloadConhecimentoResult" type="tns:LiberarDownload" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarRastreioObjeto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarRastreio" type="tns:ListarRastreio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListarRastreio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilVipp" type="tns:PerfilVipp" />
+          <s:element minOccurs="0" maxOccurs="1" name="NrEtiquetaPostagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdConhecimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacaoUm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaErros" type="tns:ArrayOfErro" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListarRastreioObjetoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarRastreioObjetoResult" type="tns:ArrayOfObjetoRastreio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfObjetoRastreio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ObjetoRastreio" nillable="true" type="tns:ObjetoRastreio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjetoRastreio">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdConhecimento" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="EtiquetaPostagem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DtPostagem" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUltimoStatus" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdGrupoStatusEvento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeGrupoStatusEvento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStatusEntrega" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="StPI" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdAoRemetente" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="StConhecimento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventoRastreio" type="tns:ArrayOfEventoRastreio" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusSolicitacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaErros" type="tns:ArrayOfErro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEventoRastreio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EventoRastreio" nillable="true" type="tns:EventoRastreio" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EventoRastreio">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdVolumeObjeto" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEventoRastreio" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoEvento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdStatusEvento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoStatusEvento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DtEventoCompleta" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdGrupoStatusEvento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeGrupoStatusEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoEdi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdLocalEventoOrigem" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoEndereco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnderecoEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComplementoEnderecoEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BairroEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CidadeEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UFEvento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STOEvento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdLocalEventoDestino" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Destino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoEnderecoDestino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnderecoDestino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComplementoEnderecoDestino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BairroDestino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CidadeDestino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UFDestino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STODestino" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeRecebedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoRecebedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObsRecebedor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostarObjeto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostagemVipp" type="tns:Postagem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Postagem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilVipp" type="tns:PerfilVipp" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContratoEct" type="tns:ContratoEct" />
+          <s:element minOccurs="0" maxOccurs="1" name="Destinatario" type="tns:Destinatario" />
+          <s:element minOccurs="0" maxOccurs="1" name="Servico" type="tns:Servico" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotasFiscais" type="tns:ArrayOfNotaFiscal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Volumes" type="tns:ArrayOfVolumeObjeto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContratoEct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NrContrato" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoAdministrativo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NrCartao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Destinatario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CnpjCpf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IeRg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SegundaLinhaDestinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Endereco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complemento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Celular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Servico">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServicoECT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNotaFiscal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NotaFiscal" nillable="true" type="tns:NotaFiscal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotaFiscal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DtNotaFiscal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerieNotaFiscal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NrNotaFiscal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VlrTotalNota" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVolumeObjeto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VolumeObjeto" nillable="true" type="tns:VolumeObjeto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VolumeObjeto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Peso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Altura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Largura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comprimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContaLote" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChaveRoteamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoBarraVolume" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoBarraCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacaoVisual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacaoQuatro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacaoCinco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PosicaoVolume" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Conteudo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeclaracaoConteudo" type="tns:DeclaracaoConteudo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValorDeclarado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdicionaisVolume" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VlrACobrar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Etiqueta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeclaracaoConteudo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoRemetente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentoDestinatario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PesoTotal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemConteudo" type="tns:ArrayOfItemConteudo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItemConteudo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ItemConteudo" nillable="true" type="tns:ItemConteudo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ItemConteudo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoConteudo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostarObjetoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostarObjetoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostarObjetoObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostagemVipp" type="tns:Postagem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostarObjetoObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostarObjetoObjectResult" type="tns:PostagemRetorno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostagemRetorno">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilVipp" type="tns:PerfilVipp" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContratoEct" type="tns:ContratoEct" />
+          <s:element minOccurs="0" maxOccurs="1" name="Destinatario" type="tns:Destinatario" />
+          <s:element minOccurs="0" maxOccurs="1" name="Servico" type="tns:Servico" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotasFiscais" type="tns:ArrayOfNotaFiscal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Volumes" type="tns:ArrayOfVolumeObjeto" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaErros" type="tns:ArrayOfErro" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusPostagem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SolicitarEtiqueta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroCartao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoServico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Quantidade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarEtiquetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SolicitarEtiquetaResult" type="tns:RetornoEtiquetas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetornoEtiquetas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Etiquetas" type="tns:ArrayOfEtiquetaPostagem" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaErros" type="tns:ArrayOfErro" />
+          <s:element minOccurs="1" maxOccurs="1" name="StSolicitacao" type="tns:StSolicitacao" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusSolicitacao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEtiquetaPostagem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EtiquetaPostagem" nillable="true" type="tns:EtiquetaPostagem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EtiquetaPostagem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroEtiqueta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="StSolicitacao">
+        <s:restriction base="s:string">
+          <s:enumeration value="Invalida" />
+          <s:enumeration value="Valida" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="BloquearObjetoCorreiosSoapIn">
+    <wsdl:part name="parameters" element="tns:BloquearObjetoCorreios" />
+  </wsdl:message>
+  <wsdl:message name="BloquearObjetoCorreiosSoapOut">
+    <wsdl:part name="parameters" element="tns:BloquearObjetoCorreiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="BloquearDownloadConhecimentoSoapIn">
+    <wsdl:part name="parameters" element="tns:BloquearDownloadConhecimento" />
+  </wsdl:message>
+  <wsdl:message name="BloquearDownloadConhecimentoSoapOut">
+    <wsdl:part name="parameters" element="tns:BloquearDownloadConhecimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LiberarDownloadConhecimentoSoapIn">
+    <wsdl:part name="parameters" element="tns:LiberarDownloadConhecimento" />
+  </wsdl:message>
+  <wsdl:message name="LiberarDownloadConhecimentoSoapOut">
+    <wsdl:part name="parameters" element="tns:LiberarDownloadConhecimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarRastreioObjetoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarRastreioObjeto" />
+  </wsdl:message>
+  <wsdl:message name="ListarRastreioObjetoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarRastreioObjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostarObjetoSoapIn">
+    <wsdl:part name="parameters" element="tns:PostarObjeto" />
+  </wsdl:message>
+  <wsdl:message name="PostarObjetoSoapOut">
+    <wsdl:part name="parameters" element="tns:PostarObjetoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostarObjetoObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:PostarObjetoObject" />
+  </wsdl:message>
+  <wsdl:message name="PostarObjetoObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:PostarObjetoObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarEtiquetaSoapIn">
+    <wsdl:part name="parameters" element="tns:SolicitarEtiqueta" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarEtiquetaSoapOut">
+    <wsdl:part name="parameters" element="tns:SolicitarEtiquetaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PostagemVippSoap">
+    <wsdl:operation name="BloquearObjetoCorreios">
+      <wsdl:input message="tns:BloquearObjetoCorreiosSoapIn" />
+      <wsdl:output message="tns:BloquearObjetoCorreiosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearDownloadConhecimento">
+      <wsdl:input message="tns:BloquearDownloadConhecimentoSoapIn" />
+      <wsdl:output message="tns:BloquearDownloadConhecimentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LiberarDownloadConhecimento">
+      <wsdl:input message="tns:LiberarDownloadConhecimentoSoapIn" />
+      <wsdl:output message="tns:LiberarDownloadConhecimentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarRastreioObjeto">
+      <wsdl:input message="tns:ListarRastreioObjetoSoapIn" />
+      <wsdl:output message="tns:ListarRastreioObjetoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostarObjeto">
+      <wsdl:input message="tns:PostarObjetoSoapIn" />
+      <wsdl:output message="tns:PostarObjetoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostarObjetoObject">
+      <wsdl:input message="tns:PostarObjetoObjectSoapIn" />
+      <wsdl:output message="tns:PostarObjetoObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarEtiqueta">
+      <wsdl:input message="tns:SolicitarEtiquetaSoapIn" />
+      <wsdl:output message="tns:SolicitarEtiquetaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PostagemVippSoap" type="tns:PostagemVippSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BloquearObjetoCorreios">
+      <soap:operation soapAction="http://www.visualset.inf.br/BloquearObjetoCorreios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearDownloadConhecimento">
+      <soap:operation soapAction="http://www.visualset.inf.br/BloquearDownloadConhecimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiberarDownloadConhecimento">
+      <soap:operation soapAction="http://www.visualset.inf.br/LiberarDownloadConhecimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRastreioObjeto">
+      <soap:operation soapAction="http://www.visualset.inf.br/ListarRastreioObjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostarObjeto">
+      <soap:operation soapAction="http://www.visualset.inf.br/PostarObjeto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostarObjetoObject">
+      <soap:operation soapAction="http://www.visualset.inf.br/PostarObjetoObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarEtiqueta">
+      <soap:operation soapAction="http://www.visualset.inf.br/SolicitarEtiqueta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PostagemVippSoap12" type="tns:PostagemVippSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BloquearObjetoCorreios">
+      <soap12:operation soapAction="http://www.visualset.inf.br/BloquearObjetoCorreios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearDownloadConhecimento">
+      <soap12:operation soapAction="http://www.visualset.inf.br/BloquearDownloadConhecimento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiberarDownloadConhecimento">
+      <soap12:operation soapAction="http://www.visualset.inf.br/LiberarDownloadConhecimento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarRastreioObjeto">
+      <soap12:operation soapAction="http://www.visualset.inf.br/ListarRastreioObjeto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostarObjeto">
+      <soap12:operation soapAction="http://www.visualset.inf.br/PostarObjeto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostarObjetoObject">
+      <soap12:operation soapAction="http://www.visualset.inf.br/PostarObjetoObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarEtiqueta">
+      <soap12:operation soapAction="http://www.visualset.inf.br/SolicitarEtiqueta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PostagemVipp">
+    <wsdl:port name="PostagemVippSoap" binding="tns:PostagemVippSoap">
+      <soap:address location="http://vpsrv.visualset.com.br/PostagemVipp.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PostagemVippSoap12" binding="tns:PostagemVippSoap12">
+      <soap12:address location="http://vpsrv.visualset.com.br/PostagemVipp.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
